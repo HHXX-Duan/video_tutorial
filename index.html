@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1419" />
+  <meta name="description" content="skkhhxx.top — 使用教程视频" />
+  <title>教程视频 — skkhhxx.top</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --border: #2d3a4f;
+      --text: #e8eef7;
+      --muted: #8b9cb3;
+      --accent: #3d8bfd;
+      --accent-dim: #2a6fd6;
+      --danger: #f87171;
+      --radius: 14px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(120% 80% at 50% -20%, #1e3a5f 0%, var(--bg) 55%);
+      color: var(--text);
+      padding: calc(16px + var(--safe-top)) 16px calc(16px + var(--safe-bottom));
+    }
+
+    .wrap {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .domain {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(61, 139, 253, 0.25);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 18px;
+      margin-top: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dim) 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(61, 139, 253, 0.35);
+      transition: transform 0.12s ease, filter 0.12s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+
+    .btn.secondary {
+      margin-top: 10px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .err {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 10px;
+      min-height: 1.2em;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .menu-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu-btns .btn {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 0 0 14px;
+      font-weight: 600;
+    }
+
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .video-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-block h3 {
+      margin: 0;
+      padding: 12px 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      max-height: 55dvh;
+      background: #000;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .top-bar .btn {
+      width: 100%;
+      max-width: 120px;
+      margin: 0;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+    }
+
+    .top-bar h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>教程视频</h1>
+    <p class="domain">skkhhxx.top</p>
+
+    <!-- 密码页 -->
+    <section id="screen-login" class="card">
+      <label for="pwd">请输入密码</label>
+      <input id="pwd" type="password" inputmode="numeric" autocomplete="current-password" maxlength="8" placeholder="密码" />
+      <button type="button" class="btn" id="btn-login">进入</button>
+      <p class="err" id="login-err" aria-live="polite"></p>
+    </section>
+
+    <!-- 主菜单 -->
+    <section id="screen-menu" class="hidden">
+      <div class="card menu-btns">
+        <button type="button" class="btn" data-route="hhjpro">hhjpro使用教程</button>
+        <button type="button" class="btn" data-route="kk">Kk使用教程</button>
+      </div>
+    </section>
+
+    <!-- hhjpro -->
+    <section id="screen-hhjpro" class="hidden">
+      <div class="top-bar">
+        <button type="button" class="btn secondary" data-back="menu">返回</button>
+        <h2>hhjpro使用教程</h2>
+      </div>
+      <div class="card video-list">
+        <div class="video-block">
+          <h3>视频1</h3>
+          <video controls playsinline preload="metadata" src="videos/hhjpro/视频1.mp4"></video>
+        </div>
+        <div class="video-block">
+          <h3>视频2</h3>
+          <video controls playsinline preload="metadata" src="videos/hhjpro/视频2.mp4"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kk -->
+    <section id="screen-kk" class="hidden">
+      <div class="top-bar">
+        <button type="button" class="btn secondary" data-back="menu">返回</button>
+        <h2>Kk使用教程</h2>
+      </div>
+      <div class="card video-list">
+        <div class="video-block">
+          <h3>视频1</h3>
+          <video controls playsinline preload="metadata" src="videos/kk/视频1.mp4"></video>
+        </div>
+        <div class="video-block">
+          <h3>视频2</h3>
+          <video controls playsinline preload="metadata" src="videos/kk/视频2.mp4"></video>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      var AUTH_KEY = "skkhhxx_auth_v1";
+      var PASS = "8888";
+
+      var login = document.getElementById("screen-login");
+      var menu = document.getElementById("screen-menu");
+      var hhjpro = document.getElementById("screen-hhjpro");
+      var kk = document.getElementById("screen-kk");
+      var pwd = document.getElementById("pwd");
+      var err = document.getElementById("login-err");
+
+      function show(id) {
+        [login, menu, hhjpro, kk].forEach(function (el) {
+          el.classList.add("hidden");
+        });
+        document.getElementById(id).classList.remove("hidden");
+      }
+
+      function pauseAllVideos() {
+        document.querySelectorAll("video").forEach(function (v) {
+          v.pause();
+        });
+      }
+
+      function goMenu() {
+        pauseAllVideos();
+        show("screen-menu");
+      }
+
+      if (sessionStorage.getItem(AUTH_KEY) === "1") {
+        login.classList.add("hidden");
+        menu.classList.remove("hidden");
+      }
+
+      document.getElementById("btn-login").addEventListener("click", function () {
+        err.textContent = "";
+        if (pwd.value === PASS) {
+          sessionStorage.setItem(AUTH_KEY, "1");
+          show("screen-menu");
+        } else {
+          err.textContent = "密码错误，请重试";
+        }
+      });
+
+      pwd.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") document.getElementById("btn-login").click();
+      });
+
+      document.querySelectorAll("[data-route]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          pauseAllVideos();
+          var r = btn.getAttribute("data-route");
+          if (r === "hhjpro") show("screen-hhjpro");
+          else if (r === "kk") show("screen-kk");
+        });
+      });
+
+      document.querySelectorAll("[data-back]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          goMenu();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
